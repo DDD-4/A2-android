@@ -39,8 +39,8 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
 
     sourceSets {
