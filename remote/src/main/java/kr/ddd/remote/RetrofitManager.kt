@@ -1,6 +1,7 @@
-package kr.ddd.data
+package kr.ddd.remote
 
 import com.orhanobut.logger.Logger
+import kr.ddd.data.BuildConfig
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import org.json.JSONException
