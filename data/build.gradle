@@ -12,7 +12,7 @@ android {
 }
 
 dependencies {
-    api project(':domain')
+    implementation project(':domain')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
@@ -23,5 +23,5 @@ dependencies {
 
     // Testing
     testImplementation 'junit:junit:4.13'
-    api 'androidx.test.ext:junit:1.1.1'
+    implementation 'androidx.test.ext:junit:1.1.1'
 }

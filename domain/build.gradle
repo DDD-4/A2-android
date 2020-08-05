@@ -11,6 +11,6 @@ dependencies {
 
     // Testing
     testImplementation 'junit:junit:4.13'
-    api 'androidx.test.ext:junit:1.1.1'
+    implementation 'androidx.test.ext:junit:1.1.1'
 
 }
