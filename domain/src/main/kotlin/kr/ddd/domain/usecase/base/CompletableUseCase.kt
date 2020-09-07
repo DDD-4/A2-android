@@ -1,8 +1,7 @@
 package kr.ddd.domain.usecase.base
 
-import io.reactivex.Completable
-import io.reactivex.Scheduler
-
+import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.Scheduler
 
 abstract class CompletableUseCase<in Params>(
     private val executorScheduler: Scheduler,

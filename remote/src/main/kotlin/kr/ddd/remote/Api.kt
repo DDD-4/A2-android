@@ -1,4 +1,3 @@
 package kr.ddd.remote
 
-
-interface Request
+interface Api
