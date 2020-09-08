@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/parentActivity">
-    <activity
-        android:id="@+id/parentActivity"
-        android:name="kr.ddd.a2.ParentActivity"
-        android:label="ParentActivity"
+    app:startDestination="@id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="kr.ddd.a2.ui.home.Home"
+        android:label="Home"
         tools:layout="@layout/activity_parent" />
 </navigation>
