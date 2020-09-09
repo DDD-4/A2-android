@@ -1,8 +1,7 @@
 package kr.ddd.domain.usecase.base
 
-import io.reactivex.Scheduler
-import io.reactivex.Single
-
+import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.core.Single
 
 abstract class SingleUseCase<T, in Params>(
     private val executorScheduler: Scheduler,

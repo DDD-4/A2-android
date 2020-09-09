@@ -1,6 +1,5 @@
 package kr.ddd.remote
 
-import com.orhanobut.logger.Logger
 import kr.ddd.data.BuildConfig
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,7 +10,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 object RetrofitManager {
 
     private const val TAG: String = "RetrofitManager"
@@ -19,7 +17,7 @@ object RetrofitManager {
     private const val WRITE_TIMEOUT: Long = 30L
     private const val READ_TIMEOUT: Long = 30L
 
-    fun getRetrofit(baseUrl: String) : Retrofit =
+    fun getRetrofit(baseUrl: String): Retrofit =
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
@@ -40,14 +38,14 @@ object RetrofitManager {
         HttpLoggingInterceptor(createLogger())
             .apply {
                 level =
-                    if(BuildConfig.DEBUG)
+                    if (BuildConfig.DEBUG)
                         HttpLoggingInterceptor.Level.BODY
                     else
                         HttpLoggingInterceptor.Level.NONE
             }
 
     private fun createLogger(): HttpLoggingInterceptor.Logger =
-        object: HttpLoggingInterceptor.Logger {
+        object : HttpLoggingInterceptor.Logger {
             override fun log(message: String) {
                 try {
                     JSONObject(message)
@@ -55,6 +53,6 @@ object RetrofitManager {
                 } catch (e: JSONException) {
                     Logger.t(TAG).d(message)
                 }
+            }
         }
-    }
 }

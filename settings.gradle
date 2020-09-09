@@ -1,5 +1,0 @@
-include ':remote'
-include ':domain'
-include ':data'
-include ':presentation'
-rootProject.name = "Android-DDD-A2"

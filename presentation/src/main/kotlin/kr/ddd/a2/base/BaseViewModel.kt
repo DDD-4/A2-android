@@ -1,9 +1,8 @@
 package kr.ddd.a2.base
 
 import androidx.lifecycle.ViewModel
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
-
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 abstract class BaseViewModel : ViewModel() {
 
@@ -15,5 +14,4 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     fun Disposable.addDisposable() = compositeDisposable.add(this)
-
 }

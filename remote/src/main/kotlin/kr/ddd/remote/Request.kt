@@ -1,4 +1,3 @@
 package kr.ddd.remote
 
-
-interface Response
+interface Request
