@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">@color/background</color>
     <color name="colorAccent">#6200EE</color>
 
-    <color name="white">#FFFFFFFF</color>
-    <color name="background">#f5f5f5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="yellow">#FFD95F</color>
+
+    <color name="background">#F5F5F5</color>
 </resources>

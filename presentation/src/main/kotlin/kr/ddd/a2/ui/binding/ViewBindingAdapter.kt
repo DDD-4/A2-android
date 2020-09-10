@@ -7,3 +7,8 @@ import androidx.databinding.BindingAdapter
 fun View.bindClickListener(func: () -> Unit) {
     setOnClickListener { func.invoke() }
 }
+
+@BindingAdapter("visibleOrGone")
+fun View.bindVisibleOrGone(value: Boolean?) {
+    visibility = if (value == true) View.VISIBLE else View.GONE
+}

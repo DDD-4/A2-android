@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,19 +10,60 @@
             type="kr.ddd.a2.ui.home.viewmodel.HomeViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{() -> vm.refresh()}"
+        app:refreshing="@{vm.isRefreshing}">
 
-        <TextView
-            android:id="@+id/tv_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello"
-            app:click="@{vm::clickMessage}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_start"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="16dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_end"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_meeting_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@{@string/format_participation_list(vm.meetingSize)}"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/gl_end"
+                    app:layout_constraintStart_toStartOf="@+id/gl_start"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="3개 모임 참여 중!" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_meeting_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/gl_end"
+                    app:layout_constraintStart_toStartOf="@+id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_meeting_count"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/holder_meeting_list" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>
