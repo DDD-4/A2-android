@@ -4,6 +4,7 @@ object Version {
 
     const val Material = "1.2.0-rc01"
     const val ConstraintLayout = "2.0.0-beta8"
+    const val SwipeRefreshLayout = "1.0.0"
 
     const val Navigation = "2.3.0"
     const val Lifecycle = "2.2.0"

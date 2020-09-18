@@ -61,8 +61,9 @@ dependencies {
     implementation(Libs.Kotlin)
 
     // ConstraintLayout
-    implementation(Libs.ConstraintLayout)
     implementation(Libs.Material)
+    implementation(Libs.ConstraintLayout)
+    implementation(Libs.SwipeRefreshLayout)
 
     // Lifecycle
     implementation(Libs.LifecycleRuntime)

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Android-DDD-A2</string>
+    <string name="app_name">출첵</string>
+    <string name="format_participation_list">%d개 모임 참여 중!</string>
 </resources>

@@ -3,6 +3,7 @@ object Libs {
 
     const val Material = "com.google.android.material:material:${Version.Material}"
     const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:${Version.ConstraintLayout}"
+    const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Version.SwipeRefreshLayout}"
 
     const val NavigationFragment = "androidx.navigation:navigation-fragment-ktx:${Version.Navigation}"
     const val NavigationUI = "androidx.navigation:navigation-ui-ktx:${Version.Navigation}"
